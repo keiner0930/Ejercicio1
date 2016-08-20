@@ -62,8 +62,26 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
         jLabel3.setText("Tercera Inversion");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+
+        txtInversionUno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInversionUnoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtInversionUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 30));
+
+        txtInversionDos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInversionDosKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtInversionDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 130, 30));
+
+        txtInversionTres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtInversionTresKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtInversionTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
@@ -136,16 +154,16 @@ public class Principal extends javax.swing.JFrame {
      int inv1,inv2,inv3,porc1,porc2,porc3;
      
      if(txtInversionUno.getText().isEmpty()){
-     JOptionPane.showMessageDialog(this, "Digite la cantidad de la inversion uno","Error",JOptionPane.ERROR_MESSAGE);
+     JOptionPane.showMessageDialog(this, "Digite La Cantidad De La Inversion Uno","Error",JOptionPane.ERROR_MESSAGE);
      txtInversionUno.requestFocusInWindow();
      }
      
      else if (txtInversionDos.getText().trim().isEmpty()){
-     JOptionPane.showMessageDialog(this, "Digite la cantidad de la inversion dos","Error",JOptionPane.ERROR_MESSAGE);
+     JOptionPane.showMessageDialog(this, "Digite La Cantidad De La Inversion Dos","Error",JOptionPane.ERROR_MESSAGE);
      txtInversionDos.requestFocusInWindow();
      }
      else if (txtInversionTres.getText().trim().isEmpty()){
-     JOptionPane.showMessageDialog(this,"Digite la cantidad de la inversion tres","Error", JOptionPane.ERROR_MESSAGE);
+     JOptionPane.showMessageDialog(this,"Digite La Cantidad De La Inversion Tres","Error", JOptionPane.ERROR_MESSAGE);
      }
      else{
         
@@ -154,7 +172,7 @@ public class Principal extends javax.swing.JFrame {
      inv3= Integer.parseInt(txtInversionTres.getText());
      
      total=inv1+inv2+inv3;
-      
+     
      porc1=(inv1*100)/total;
      porc2=(inv2*100)/total;
      porc3=(inv3*100)/total;
@@ -181,6 +199,33 @@ public class Principal extends javax.swing.JFrame {
      txtInversionUno.requestFocusInWindow();
         
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtInversionUnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInversionUnoKeyTyped
+      char c=evt.getKeyChar(); 
+     if(!Character.isDigit(c)) { 
+              getToolkit().beep();  
+              evt.consume();
+        
+          }          
+    }//GEN-LAST:event_txtInversionUnoKeyTyped
+
+    private void txtInversionDosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInversionDosKeyTyped
+      char c=evt.getKeyChar(); 
+     if(!Character.isDigit(c)) { 
+              getToolkit().beep();  
+              evt.consume();
+        
+          }   
+    }//GEN-LAST:event_txtInversionDosKeyTyped
+
+    private void txtInversionTresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInversionTresKeyTyped
+      char c=evt.getKeyChar(); 
+     if(!Character.isDigit(c)) { 
+              getToolkit().beep();  
+              evt.consume();
+        
+          } 
+    }//GEN-LAST:event_txtInversionTresKeyTyped
 
     /**
      * @param args the command line arguments
