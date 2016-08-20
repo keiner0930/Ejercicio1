@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sony
@@ -28,24 +30,157 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtInversionUno = new javax.swing.JTextField();
+        txtInversionDos = new javax.swing.JTextField();
+        txtInversionTres = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtPorcentajeUno = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
+        txtPorcentajeDos = new javax.swing.JTextField();
+        txtPorcentajeTres = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        jLabel1.setText("Primera Inversion");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        jLabel2.setText("Segunda Inversion");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        jLabel3.setText("Tercera Inversion");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        jPanel1.add(txtInversionUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 30));
+        jPanel1.add(txtInversionDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 130, 30));
+        jPanel1.add(txtInversionTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 130, 30));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel4.setText("Porcentajes de la Inversion");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel5.setText("Resultado :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        txtPorcentajeUno.setEditable(false);
+        jPanel1.add(txtPorcentajeUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 110, 30));
+
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, -1));
+
+        txtPorcentajeDos.setEditable(false);
+        jPanel1.add(txtPorcentajeDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 110, 30));
+
+        txtPorcentajeTres.setEditable(false);
+        jPanel1.add(txtPorcentajeTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 110, 30));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setText("Porcentaje 1");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel7.setText("Porcentaje 2");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setText("Porcentaje 3");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+
+        cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+     String res1,res2,res3;
+     int resultado,total;
+     int inv1,inv2,inv3,porc1,porc2,porc3;
+     
+     if(txtInversionUno.getText().isEmpty()){
+     JOptionPane.showMessageDialog(this, "Digite la cantidad de la inversion uno","Error",JOptionPane.ERROR_MESSAGE);
+     txtInversionUno.requestFocusInWindow();
+     }
+     
+     else if (txtInversionDos.getText().trim().isEmpty()){
+     JOptionPane.showMessageDialog(this, "Digite la cantidad de la inversion dos","Error",JOptionPane.ERROR_MESSAGE);
+     txtInversionDos.requestFocusInWindow();
+     }
+     else if (txtInversionTres.getText().trim().isEmpty()){
+     JOptionPane.showMessageDialog(this,"Digite la cantidad de la inversion tres","Error", JOptionPane.ERROR_MESSAGE);
+     }
+     else{
+        
+     inv1= Integer.parseInt(txtInversionUno.getText());
+     inv2= Integer.parseInt(txtInversionDos.getText());
+     inv3= Integer.parseInt(txtInversionTres.getText());
+     
+     total=inv1+inv2+inv3;
+      
+     porc1=(inv1*100)/total;
+     porc2=(inv2*100)/total;
+     porc3=(inv3*100)/total;
+
+     res1= String.valueOf(porc1); 
+     res2= String.valueOf(porc2);
+     res3= String.valueOf(porc3);
+     
+     txtPorcentajeUno.setText(res1+"%");
+     txtPorcentajeDos.setText(res2+"%");
+     txtPorcentajeTres.setText(res3+"%");        
+     }       
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+     
+     txtInversionUno.setText("");
+     txtInversionDos.setText("");
+     txtInversionTres.setText("");
+     txtPorcentajeUno.setText("");
+     txtPorcentajeDos.setText("");
+     txtPorcentajeTres.setText("");
+     
+     txtInversionUno.requestFocusInWindow();
+        
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,6 +218,22 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtInversionDos;
+    private javax.swing.JTextField txtInversionTres;
+    private javax.swing.JTextField txtInversionUno;
+    private javax.swing.JTextField txtPorcentajeDos;
+    private javax.swing.JTextField txtPorcentajeTres;
+    private javax.swing.JTextField txtPorcentajeUno;
     // End of variables declaration//GEN-END:variables
 }
